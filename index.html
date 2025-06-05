@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CanvasCraft</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>Drag & Drop Website Builder</header>
+
+<div class="container">
+
+  <!-- Sidebar with draggable elements -->
+  <aside class="sidebar" aria-label="Elements to drag">
+    <h2>Elements</h2>
+    <div class="element" draggable="true" data-type="text">Text</div>
+    <div class="element" draggable="true" data-type="image">Image</div>
+    <div class="element" draggable="true" data-type="button">Button</div>
+  </aside>
+
+  <!-- Canvas to drop elements -->
+  <section class="canvas-wrapper" aria-label="Website design canvas">
+    <div class="canvas" tabindex="0"></div>
+  </section>
+
+  <!-- Properties panel -->
+  <aside class="properties-panel" aria-label="Element properties editor">
+    <h2>Properties</h2>
+    <div class="instructions">
+      <strong>How to Use:</strong><br>
+      1. Drag an element from left and drop on canvas.<br>
+      2. Click element on canvas to select.<br>
+      3. Edit properties below.<br>
+      4. Drag selected element inside canvas to move.<br>
+      5. Delete element using button.<br>
+    </div>
+    <form id="propForm">
+      <label for="propText">Text / Button Label</label>
+      <input type="text" id="propText" placeholder="Edit text or button label" />
+
+      <label for="propFontSize">Font Size (px)</label>
+      <input type="number" id="propFontSize" min="8" max="72" />
+
+      <label for="propTextColor">Text Color</label>
+      <input type="color" id="propTextColor" value="#000000" />
+
+      <label for="propBgColor">Background Color</label>
+      <input type="color" id="propBgColor" value="#ffffff" />
+
+      <label for="propImageURL">Image URL (for images only)</label>
+      <input type="text" id="propImageURL" placeholder="Paste image URL here" />
+
+      <button type="submit" id="applyBtn" disabled>Apply Changes</button>
+      <button type="button" id="deleteBtn" style="margin-top:10px; background:#dc3545;">Delete Element</button>
+    </form>
+  </aside>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

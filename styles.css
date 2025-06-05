@@ -1,0 +1,202 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+body, html {
+  margin: 0; padding: 0;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f7f9fc;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: #0d6efd;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  user-select: none;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 180px;
+  background: #ffffff;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+}
+.sidebar h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.element {
+  padding: 12px 10px;
+  background: #e9ecef;
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  cursor: grab;
+  text-align: center;
+  user-select: none;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+.element:active {
+  cursor: grabbing;
+}
+.element:hover {
+  background: #ced4da;
+}
+
+/* Canvas */
+.canvas-wrapper {
+  flex: 1;
+  background: white;
+  margin: 1rem;
+  border: 2px dashed #aaa;
+  border-radius: 8px;
+  position: relative;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.canvas {
+  width: 90%;
+  min-height: 80vh;
+  background: #fff;
+  position: relative;
+  outline: none;
+  padding: 10px;
+}
+
+/* Elements on canvas */
+.canvas .draggable {
+  position: absolute;
+  padding: 6px 10px;
+  cursor: move;
+  user-select: none;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  background: #fefefe;
+}
+
+.canvas .draggable.selected {
+  border: 2px solid #0d6efd;
+  box-shadow: 0 0 8px #0d6efd;
+  background: #e7f1ff;
+}
+
+.canvas img.draggable {
+  max-width: 200px;
+  max-height: 150px;
+}
+
+/* Properties Panel */
+.properties-panel {
+  width: 280px;
+  background: #f8f9fa;
+  border-left: 1px solid #ddd;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.properties-panel h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  color: #555;
+}
+input[type="text"],
+input[type="number"],
+input[type="color"] {
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  outline-offset: 2px;
+}
+input[type="color"] {
+  padding: 3px 8px;
+  height: 32px;
+}
+button {
+  padding: 8px;
+  background: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+button:disabled {
+  background: #a3c2ff;
+  cursor: not-allowed;
+}
+button:hover:not(:disabled) {
+  background: #084cd9;
+}
+
+/* Instructions Panel */
+.instructions {
+  background: #e7f1ff;
+  color: #0d6efd;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar, .properties-panel {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 0.8rem;
+    padding: 0.5rem 1rem;
+    border: none;
+  }
+  .properties-panel {
+    border-top: 1px solid #ddd;
+    border-left: none;
+    padding-top: 0.5rem;
+  }
+  .sidebar .element {
+    flex: 1 0 100px;
+  }
+  .canvas-wrapper {
+    margin: 0 1rem 1rem;
+    height: 50vh;
+  }
+  .canvas {
+    width: 100%;
+    min-height: 100%;
+  }
+}
