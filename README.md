@@ -4,6 +4,13 @@ Welcome to **CanvasCraft**, a sleek and intuitive drag-and-drop website builder 
 
 ---
 
+## 🚀 Live Demo
+
+Experience the magic yourself:  
+[https://barsharouth.github.io/CanvasCraft/]
+
+---
+
 ## ✨ Features
 
 - **Intuitive Drag & Drop Interface**  
